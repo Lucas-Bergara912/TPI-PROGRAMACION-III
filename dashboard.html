@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Estadísticas del Sistema</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Dashboard de Alquileres</h1>
+        <nav id="main-nav">
+            </nav>
+    </header>
+
+    <main class="container">
+        
+        <section id="dashboard-header" class="hero">
+            <h2>Vista General y Estadísticas</h2>
+            <p>Aquí puedes visualizar el rendimiento y el estado actual del negocio.</p>
+        </section>
+
+        <section id="kpis" class="card-container">
+            <div class="card stat-card">
+                <h4>Ganancia Total (ADMIN)</h4>
+                <p id="total-revenue">$ <span class="data-value">Cargando...</span></p>
+            </div>
+            
+            <div class="card stat-card">
+                <h4>Reservas en Curso</h4>
+                <p id="active-rentals-count"><span class="data-value">Cargando...</span></p>
+            </div>
+            
+            <div class="card stat-card">
+                <h4>Mis Reservas (USUARIO)</h4>
+                <p id="user-rentals-count"><span class="data-value">Cargando...</span></p>
+            </div>
+        </section>
+
+        <section id="rentals-chart-section" class="card full-width">
+            <h3>Estado de los Alquileres</h3>
+            <p>Gráfico con el estado de los alquileres (activo, finalizado, cancelado, etc.).</p>
+            
+            <div class="chart-container" style="max-height: 400px;">
+                <canvas id="rentals-status-chart"></canvas>
+            </div>
+            <p class="error-message" id="chart-load-error"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Programación III - Sistema de Alquiler de Autos</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/dashboard.js"></script>
+    
+</body>
+</html>

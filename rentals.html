@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reservas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mis Reservas / Control de Alquileres</h1>
+        <nav id="main-nav">
+            </nav>
+    </header>
+
+    <main class="container">
+        
+        <section id="rentals-header" class="hero">
+            <h2 id="section-title">Mis Reservas</h2>
+            <p id="section-description">Aquí se gestionan las reservas realizadas por los usuarios.</p>
+        </section>
+
+        <section id="admin-rentals-filter" class="search-bar admin-only hidden">
+            <h3>Filtro de Reservas (ADMIN)</h3>
+            <form id="filter-rentals-form" class="form-inline">
+                <select id="filter-rental-status">
+                    <option value="">Todos los Estados</option>
+                    <option value="activo">Activo</option>
+                    <option value="finalizado">Finalizado</option>
+                    <option value="cancelado">Cancelado</option>
+                </select>
+                <input type="text" id="filter-user-id" placeholder="Filtrar por User ID o Email...">
+                <button type="submit" class="btn btn-primary">Aplicar Filtros</button>
+            </form>
+            <hr>
+        </section>
+
+        <section id="rental-list-section">
+            <p class="info-message" id="loading-message">Cargando reservas...</p>
+            
+            <div id="rentals-container" class="table-responsive">
+                </div>
+            
+            <p id="no-rentals-message" class="info-message hidden">No tienes reservas realizadas.</p>
+        </section>
+        
+        <section id="rental-detail-modal" class="modal hidden">
+            </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Programación III - Sistema de Alquiler de Autos</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/rentals.js"></script>
+    
+</body>
+</html>

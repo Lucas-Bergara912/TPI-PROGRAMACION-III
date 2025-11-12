@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN | Panel de Control</title>
+    <link rel="stylesheet" href="css/styles.css">
+    </head>
+<body>
+
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav id="main-nav">
+            </nav>
+    </header>
+
+    <main class="container">
+        
+        <section id="admin-welcome" class="hero">
+            <h2>Bienvenido/a, Administrador/a.</h2>
+            <p>Utiliza la navegación superior para acceder a las herramientas de gestión del sistema.</p>
+        </section>
+
+        <section id="quick-stats" class="card-container">
+            <h3>Resumen del Sistema</h3>
+            
+            <div class="card stat-card">
+                <h4>Autos Disponibles</h4>
+                <p id="available-cars-count">Cargando...</p>
+                <a href="cars.html" class="btn-link">Gestionar Autos</a>
+            </div>
+
+            <div class="card stat-card">
+                <h4>Reservas en Curso</h4>
+                <p id="active-rentals-count">Cargando...</p>
+                <a href="rentals.html" class="btn-link">Controlar Reservas</a>
+            </div>
+
+            <div class="card stat-card full-width">
+                <h4>Estado de Alquileres (Gráfico)</h4>
+                <canvas id="rentals-status-chart"></canvas> 
+                <p>El gráfico con el estado de los alquileres se renderizará aquí.</p>
+            </div>
+
+        </section>
+
+        <section id="user-management" class="card-container">
+            <h3>Administración de Usuarios</h3>
+            <p>El rol ADMIN puede crear usuarios y cambiar su contraseña.</p>
+            
+            <div id="user-management-area">
+                <button class="btn btn-secondary">Crear Nuevo Usuario</button>
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Programación III - Sistema de Alquiler de Autos</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/dashboard.js"></script> 
+    
+</body>
+</html>

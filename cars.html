@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehículos Disponibles y Gestión</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Catálogo de Autos</h1>
+        <nav id="main-nav">
+            </nav>
+    </header>
+
+    <main class="container">
+        
+        <section id="car-search" class="search-bar">
+            <h2>Buscar Vehículo</h2>
+            <form id="search-form" class="form-inline">
+                <input type="text" id="search-query" placeholder="Buscar por marca/modelo..." required>
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+        </section>
+
+        <section id="admin-car-actions" class="admin-only hidden">
+            <hr>
+            <h3>Gestión de Vehículos (ADMIN)</h3>
+            <p>El administrador realiza el ABM (Alta, Baja, Modificación) de los autos.</p>
+            <button id="btn-show-create-car" class="btn btn-secondary">➕ Agregar Nuevo Auto</button>
+            <hr>
+        </section>
+        
+        <section id="car-form-container" class="card full-width hidden">
+            <h3><span id="form-title">Crear</span> Auto</h3>
+            <form id="car-form">
+                <input type="hidden" id="car-id">
+                <div class="form-group">
+                    <label for="car-brand">Marca:</label>
+                    <input type="text" id="car-brand" required>
+                </div>
+                <div class="form-group">
+                    <label for="car-model">Modelo:</label>
+                    <input type="text" id="car-model" required>
+                </div>
+                <div class="form-group">
+                    <label for="car-price-day">Precio por Día ($):</label>
+                    <input type="number" id="car-price-day" min="1" required>
+                </div>
+                <div class="form-group admin-only">
+                    <label for="car-available">Disponible:</label>
+                    <input type="checkbox" id="car-available" checked>
+                </div>
+
+                <button type="submit" class="btn btn-primary"><span id="submit-button-text">Guardar</span> Auto</button>
+                <button type="button" id="btn-cancel-car-form" class="btn btn-secondary">Cancelar</button>
+                <p class="error-message" id="car-form-message"></p>
+            </form>
+        </section>
+
+        <section id="car-list-section">
+            <h2>Resultados de la Búsqueda</h2>
+            
+            <div id="cars-container" class="card-grid">
+                </div>
+            <p id="no-cars-message" class="info-message hidden">No se encontraron vehículos que coincidan con la búsqueda.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Programación III - Sistema de Alquiler de Autos</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/cars.js"></script>
+    
+</body>
+</html>
